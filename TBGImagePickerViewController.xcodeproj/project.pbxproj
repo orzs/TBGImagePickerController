@@ -10,10 +10,19 @@
 		F5D1746C1B73754600B6AB7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1746B1B73754600B6AB7A /* main.m */; };
 		F5D1746F1B73754600B6AB7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1746E1B73754600B6AB7A /* AppDelegate.m */; };
 		F5D174721B73754600B6AB7A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174711B73754600B6AB7A /* ViewController.m */; };
-		F5D174751B73754600B6AB7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D174731B73754600B6AB7A /* Main.storyboard */; };
 		F5D174771B73754600B6AB7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D174761B73754600B6AB7A /* Images.xcassets */; };
 		F5D1747A1B73754600B6AB7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D174781B73754600B6AB7A /* LaunchScreen.xib */; };
 		F5D174861B73754600B6AB7A /* TBGImagePickerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174851B73754600B6AB7A /* TBGImagePickerViewControllerTests.m */; };
+		F5D174A61B73755C00B6AB7A /* AGImagePickerController+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174911B73755C00B6AB7A /* AGImagePickerController+Helper.m */; };
+		F5D174A71B73755C00B6AB7A /* AGImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5D174921B73755C00B6AB7A /* AGImagePickerController.bundle */; };
+		F5D174A81B73755C00B6AB7A /* AGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174941B73755C00B6AB7A /* AGImagePickerController.m */; };
+		F5D174A91B73755C00B6AB7A /* AGIPCAlbumsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174971B73755C00B6AB7A /* AGIPCAlbumsController.m */; };
+		F5D174AA1B73755C00B6AB7A /* AGIPCAssetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174991B73755C00B6AB7A /* AGIPCAssetsController.m */; };
+		F5D174AB1B73755C00B6AB7A /* AGIPCGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1749B1B73755C00B6AB7A /* AGIPCGridCell.m */; };
+		F5D174AC1B73755C00B6AB7A /* AGIPCGridCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1749D1B73755C00B6AB7A /* AGIPCGridCollectionCell.m */; };
+		F5D174AD1B73755C00B6AB7A /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1749F1B73755C00B6AB7A /* AGIPCGridItem.m */; };
+		F5D174AF1B73755C00B6AB7A /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174A31B73755C00B6AB7A /* ALAsset+AGIPC.m */; };
+		F5F760C51B73825600428CF2 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F760C41B73825600428CF2 /* BBBadgeBarButtonItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +43,31 @@
 		F5D1746E1B73754600B6AB7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F5D174701B73754600B6AB7A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F5D174711B73754600B6AB7A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F5D174741B73754600B6AB7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5D174761B73754600B6AB7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5D174791B73754600B6AB7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F5D1747F1B73754600B6AB7A /* TBGImagePickerViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBGImagePickerViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D174841B73754600B6AB7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D174851B73754600B6AB7A /* TBGImagePickerViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBGImagePickerViewControllerTests.m; sourceTree = "<group>"; };
+		F5D174901B73755C00B6AB7A /* AGImagePickerController+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AGImagePickerController+Helper.h"; sourceTree = "<group>"; };
+		F5D174911B73755C00B6AB7A /* AGImagePickerController+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AGImagePickerController+Helper.m"; sourceTree = "<group>"; };
+		F5D174921B73755C00B6AB7A /* AGImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AGImagePickerController.bundle; sourceTree = "<group>"; };
+		F5D174931B73755C00B6AB7A /* AGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerController.h; sourceTree = "<group>"; };
+		F5D174941B73755C00B6AB7A /* AGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGImagePickerController.m; sourceTree = "<group>"; };
+		F5D174951B73755C00B6AB7A /* AGImagePickerControllerDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGImagePickerControllerDefines.h; sourceTree = "<group>"; };
+		F5D174961B73755C00B6AB7A /* AGIPCAlbumsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAlbumsController.h; sourceTree = "<group>"; };
+		F5D174971B73755C00B6AB7A /* AGIPCAlbumsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAlbumsController.m; sourceTree = "<group>"; };
+		F5D174981B73755C00B6AB7A /* AGIPCAssetsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCAssetsController.h; sourceTree = "<group>"; };
+		F5D174991B73755C00B6AB7A /* AGIPCAssetsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCAssetsController.m; sourceTree = "<group>"; };
+		F5D1749A1B73755C00B6AB7A /* AGIPCGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridCell.h; sourceTree = "<group>"; };
+		F5D1749B1B73755C00B6AB7A /* AGIPCGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridCell.m; sourceTree = "<group>"; };
+		F5D1749C1B73755C00B6AB7A /* AGIPCGridCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridCollectionCell.h; sourceTree = "<group>"; };
+		F5D1749D1B73755C00B6AB7A /* AGIPCGridCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridCollectionCell.m; sourceTree = "<group>"; };
+		F5D1749E1B73755C00B6AB7A /* AGIPCGridItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGIPCGridItem.h; sourceTree = "<group>"; };
+		F5D1749F1B73755C00B6AB7A /* AGIPCGridItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGIPCGridItem.m; sourceTree = "<group>"; };
+		F5D174A21B73755C00B6AB7A /* ALAsset+AGIPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+AGIPC.h"; sourceTree = "<group>"; };
+		F5D174A31B73755C00B6AB7A /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
+		F5F760C41B73825600428CF2 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		F5F760C61B73878E00428CF2 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +109,11 @@
 		F5D174681B73754600B6AB7A /* TBGImagePickerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F5D1748F1B73755C00B6AB7A /* TBGImagePickerController */,
 				F5D1746D1B73754600B6AB7A /* AppDelegate.h */,
 				F5D1746E1B73754600B6AB7A /* AppDelegate.m */,
 				F5D174701B73754600B6AB7A /* ViewController.h */,
 				F5D174711B73754600B6AB7A /* ViewController.m */,
-				F5D174731B73754600B6AB7A /* Main.storyboard */,
 				F5D174761B73754600B6AB7A /* Images.xcassets */,
 				F5D174781B73754600B6AB7A /* LaunchScreen.xib */,
 				F5D174691B73754600B6AB7A /* Supporting Files */,
@@ -117,6 +145,34 @@
 				F5D174841B73754600B6AB7A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5D1748F1B73755C00B6AB7A /* TBGImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				F5D174901B73755C00B6AB7A /* AGImagePickerController+Helper.h */,
+				F5D174911B73755C00B6AB7A /* AGImagePickerController+Helper.m */,
+				F5D174921B73755C00B6AB7A /* AGImagePickerController.bundle */,
+				F5D174931B73755C00B6AB7A /* AGImagePickerController.h */,
+				F5D174941B73755C00B6AB7A /* AGImagePickerController.m */,
+				F5D174951B73755C00B6AB7A /* AGImagePickerControllerDefines.h */,
+				F5D174961B73755C00B6AB7A /* AGIPCAlbumsController.h */,
+				F5D174971B73755C00B6AB7A /* AGIPCAlbumsController.m */,
+				F5D174981B73755C00B6AB7A /* AGIPCAssetsController.h */,
+				F5D174991B73755C00B6AB7A /* AGIPCAssetsController.m */,
+				F5D1749A1B73755C00B6AB7A /* AGIPCGridCell.h */,
+				F5D1749B1B73755C00B6AB7A /* AGIPCGridCell.m */,
+				F5D1749C1B73755C00B6AB7A /* AGIPCGridCollectionCell.h */,
+				F5D1749D1B73755C00B6AB7A /* AGIPCGridCollectionCell.m */,
+				F5D1749E1B73755C00B6AB7A /* AGIPCGridItem.h */,
+				F5D1749F1B73755C00B6AB7A /* AGIPCGridItem.m */,
+				F5D174A21B73755C00B6AB7A /* ALAsset+AGIPC.h */,
+				F5D174A31B73755C00B6AB7A /* ALAsset+AGIPC.m */,
+				F5F760C41B73825600428CF2 /* BBBadgeBarButtonItem.m */,
+				F5F760C61B73878E00428CF2 /* BBBadgeBarButtonItem.h */,
+			);
+			name = TBGImagePickerController;
+			path = AGImagePickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +255,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5D174751B73754600B6AB7A /* Main.storyboard in Resources */,
 				F5D1747A1B73754600B6AB7A /* LaunchScreen.xib in Resources */,
 				F5D174771B73754600B6AB7A /* Images.xcassets in Resources */,
+				F5D174A71B73755C00B6AB7A /* AGImagePickerController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +275,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D174A91B73755C00B6AB7A /* AGIPCAlbumsController.m in Sources */,
 				F5D174721B73754600B6AB7A /* ViewController.m in Sources */,
+				F5D174AA1B73755C00B6AB7A /* AGIPCAssetsController.m in Sources */,
+				F5F760C51B73825600428CF2 /* BBBadgeBarButtonItem.m in Sources */,
 				F5D1746F1B73754600B6AB7A /* AppDelegate.m in Sources */,
+				F5D174AB1B73755C00B6AB7A /* AGIPCGridCell.m in Sources */,
+				F5D174AC1B73755C00B6AB7A /* AGIPCGridCollectionCell.m in Sources */,
+				F5D174A61B73755C00B6AB7A /* AGImagePickerController+Helper.m in Sources */,
+				F5D174AD1B73755C00B6AB7A /* AGIPCGridItem.m in Sources */,
+				F5D174A81B73755C00B6AB7A /* AGImagePickerController.m in Sources */,
+				F5D174AF1B73755C00B6AB7A /* ALAsset+AGIPC.m in Sources */,
 				F5D1746C1B73754600B6AB7A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +309,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F5D174731B73754600B6AB7A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5D174741B73754600B6AB7A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F5D174781B73754600B6AB7A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TBGImagePickerViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TBGImagePickerViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +475,7 @@
 				F5D1748B1B73754600B6AB7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5D1748C1B73754600B6AB7A /* Build configuration list for PBXNativeTarget "TBGImagePickerViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +484,7 @@
 				F5D1748E1B73754600B6AB7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
