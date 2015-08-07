@@ -41,4 +41,9 @@
     self.rmAction();
 }
 
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    self.imgView.alpha = highlighted ? 0.75f : 1.0f;
+}
+
 @end

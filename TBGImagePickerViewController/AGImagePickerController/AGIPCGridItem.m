@@ -54,6 +54,11 @@ static NSUInteger numberOfSelectedGridItems = 0;
                     if (![self.delegate agGridItemCanSelect:self])
                         return;
                 }
+            }else{
+                if ([self.delegate respondsToSelector:@selector(agGridItemCancelSelect:)]){
+                    if(![self.delegate agGridItemCancelSelect:self])
+                        return;
+                }
             }
             
             _selected = selected;

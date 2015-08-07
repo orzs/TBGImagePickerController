@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>03A24B5D-E1B5-439D-951A-F07F8BF562A5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TBGImagePickerViewController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8C9AAD24FC307A9AE7930D33B7B013FB04362849</key>
+		<string>https://github.com/orzs/TBGImagePickerController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TBGImagePickerViewController.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8C9AAD24FC307A9AE7930D33B7B013FB04362849</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/orzs/TBGImagePickerController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8C9AAD24FC307A9AE7930D33B7B013FB04362849</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C9AAD24FC307A9AE7930D33B7B013FB04362849</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TBGImagePickerViewController</string>
+		</dict>
+	</array>
+</dict>
+</plist>

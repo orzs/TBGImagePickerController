@@ -23,54 +23,20 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *assets;
-
+@property (nonatomic,strong) UITableView *mytableView;
+@property (nonatomic,strong) UICollectionView *mycollectionView;
+@property (nonatomic,strong) ALAssetsGroup *assetsGroup;
+@property (nonatomic,strong) NSMutableArray *selectedAssets;
 @end
 
 @interface AGIPCAssetsController (Private)
-
-- (void)changeSelectionInformation;
-
-- (void)registerForNotifications;
-- (void)unregisterFromNotifications;
-
-- (void)didChangeLibrary:(NSNotification *)notification;
-- (void)didChangeToolbarItemsForManagingTheSelection:(NSNotification *)notification;
-
-- (BOOL)toolbarHidden;
-
-- (void)loadAssets;
-- (void)reloadData;
-
-- (void)setupToolbarItems;
-
-- (NSArray *)itemsForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-- (void)doneAction:(id)sender;
-- (void)selectAllAction:(id)sender;
-- (void)deselectAllAction:(id)sender;
-- (void)customBarButtonItemAction:(id)sender;
-
 @end
 
 @implementation AGIPCAssetsController
 
 #pragma mark - Properties
 
-@synthesize assetsGroup = _assetsGroup, assets = _assets, imagePickerController = _imagePickerController,mytableView = _mytableView;
-
-- (BOOL)toolbarHidden
-{
-    if (! self.imagePickerController.shouldShowToolbarForManagingTheSelection)
-        return YES;
-    else
-    {
-        if (self.imagePickerController.toolbarItemsForManagingTheSelection != nil) {
-            return !(self.imagePickerController.toolbarItemsForManagingTheSelection.count > 0);
-        } else {
-            return NO;
-        }
-    }
-}
+@synthesize assetsGroup = _assetsGroup, assets = _assets, imagePickerController = _imagePickerController, mytableView = _mytableView, mycollectionView = _mycollectionView, selectedAssets = _selectedAssets;
 
 - (void)setAssetsGroup:(ALAssetsGroup *)theAssetsGroup
 {
@@ -81,7 +47,7 @@
             _assetsGroup = theAssetsGroup;
             [_assetsGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
 
-            [self reloadData];
+            [self.mytableView reloadData];
         }
     }
 }
@@ -96,21 +62,6 @@
     }
     
     return ret;
-}
-
-- (NSMutableArray *)selectedAssets
-{
-    NSMutableArray *selectedAssets = [NSMutableArray array];
-    
-	for (AGIPCGridItem *gridItem in self.assets) 
-    {		
-		if (gridItem.selected)
-        {	
-			[selectedAssets addObject:gridItem.asset];
-		}
-	}
-    
-    return selectedAssets;
 }
 
 #pragma mark - Object Lifecycle
@@ -132,7 +83,7 @@
         self.mytableView.dataSource = self;
         [self.view addSubview:self.mytableView];
         
-        UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
+         LXReorderableCollectionViewFlowLayout *flowLayout=[[LXReorderableCollectionViewFlowLayout alloc] init];
         flowLayout.itemSize=CGSizeMake(68,68);
         flowLayout.sectionInset = UIEdgeInsetsMake(2, 5, 0, 0);
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -151,10 +102,11 @@
         barButton.badgeValue = @"0";
         barButton.badgeOriginX = 28;
         barButton.badgeOriginY = -8;
+//        self.navigationItem.rightBarButtonItem.enabled = NO;
         self.navigationItem.rightBarButtonItem = barButton;
         
-        
         _assets = [[NSMutableArray alloc] init];
+        _selectedAssets = [[NSMutableArray alloc] init];
         self.assetsGroup = assetsGroup;
         self.imagePickerController = imagePickerController;
         self.title = NSLocalizedStringWithDefaultValue(@"AGIPC.Loading", nil, [NSBundle mainBundle], @"Loading...", nil);
@@ -172,7 +124,7 @@
     [self unregisterFromNotifications];
 }
 
-#pragma mark - UITableViewDataSource Methods
+#pragma mark - UITableViewDataSource UITableViewDelegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -230,7 +182,7 @@
 
 #pragma mark - UICollectionDataSource Methods
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [AGIPCGridItem numberOfSelections];
+    return self.selectedAssets.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -251,10 +203,46 @@
                 gridItem.selected = NO;
             }
         }
+        [self.selectedAssets removeObject:tmpAsset];
         [weakSelf.mycollectionView reloadData];
     };
     return cell;
 }
+
+#pragma mark - LXReorderableCollectionViewDataSource Methods
+
+- (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath willMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    ALAsset *tmpAsset = (ALAsset *)self.selectedAssets[fromIndexPath.row];
+    [self.selectedAssets removeObjectAtIndex:fromIndexPath.row];
+    [self.selectedAssets insertObject:tmpAsset atIndex:toIndexPath.row];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)fromIndexPath canMoveToIndexPath:(NSIndexPath *)toIndexPath {
+    return YES;
+}
+
+#pragma mark - LXReorderableCollectionViewDelegateFlowLayout Methods
+
+- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout willBeginDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"will begin drag");
+}
+
+- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout didBeginDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"did begin drag");
+}
+
+- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout willEndDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"will end drag");
+}
+
+- (void)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout didEndDraggingItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"did end drag");
+}
+
 
 #pragma mark - View Lifecycle
 
@@ -345,7 +333,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [strongSelf reloadData];
+            [strongSelf.mytableView reloadData];
             
         });
     
@@ -357,16 +345,7 @@
     [self.mytableView reloadData];
     [self.mycollectionView reloadData];
     
-    //[self setTitle:[self.assetsGroup valueForProperty:ALAssetsGroupPropertyName]];
     [self changeSelectionInformation];
-    
-    /*
-    NSInteger totalRows = [self.tableView numberOfRowsInSection:0];
-    //Prevents crash if totalRows = 0 (when the album is empty).
-    if (totalRows > 0) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:totalRows-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-    }
-     */
 }
 
 - (void)doneAction:(id)sender
@@ -397,7 +376,7 @@
 {
     if (self.imagePickerController.shouldDisplaySelectionInformation ) {
         BBBadgeBarButtonItem *button = (BBBadgeBarButtonItem *)self.navigationItem.rightBarButtonItem;
-        button.badgeValue = [NSString stringWithFormat:@"%d",[AGIPCGridItem numberOfSelections]];
+        button.badgeValue = [NSString stringWithFormat:@"%lu",(unsigned long)self.selectedAssets.count];
     }
 }
 
@@ -405,26 +384,26 @@
 
 - (void)agGridItem:(AGIPCGridItem *)gridItem didChangeNumberOfSelections:(NSNumber *)numberOfSelections
 {
-    self.navigationItem.rightBarButtonItem.enabled = (numberOfSelections.unsignedIntegerValue > 0);
+//    self.navigationItem.rightBarButtonItem.enabled = (numberOfSelections.unsignedIntegerValue > 0);
     [self changeSelectionInformation];
     [self.mycollectionView reloadData];
 }
 
 - (BOOL)agGridItemCanSelect:(AGIPCGridItem *)gridItem
 {
-    if (self.imagePickerController.selectionMode == AGImagePickerControllerSelectionModeSingle && self.imagePickerController.selectionBehaviorInSingleSelectionMode == AGImagePickerControllerSelectionBehaviorTypeRadio) {
-        for (AGIPCGridItem *item in self.assets)
-            if (item.selected)
-                item.selected = NO;
-        
+    [self.selectedAssets addObject:gridItem.asset];
+    if (self.imagePickerController.maximumNumberOfPhotosToBeSelected > 0)
+        return ([AGIPCGridItem numberOfSelections] < self.imagePickerController.maximumNumberOfPhotosToBeSelected);
+    else
         return YES;
-    } else {
-        if (self.imagePickerController.maximumNumberOfPhotosToBeSelected > 0)
-            return ([AGIPCGridItem numberOfSelections] < self.imagePickerController.maximumNumberOfPhotosToBeSelected);
-        else
-            return YES;
-    }
 }
+
+- (BOOL)agGridItemCancelSelect:(AGIPCGridItem *)gridItem{
+    [self.selectedAssets removeObject:gridItem.asset];
+    [self.mycollectionView reloadData];
+    return YES;
+}
+
 
 #pragma mark - Notifications
 

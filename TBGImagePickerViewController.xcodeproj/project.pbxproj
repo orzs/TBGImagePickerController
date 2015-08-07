@@ -23,6 +23,7 @@
 		F5D174AD1B73755C00B6AB7A /* AGIPCGridItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D1749F1B73755C00B6AB7A /* AGIPCGridItem.m */; };
 		F5D174AF1B73755C00B6AB7A /* ALAsset+AGIPC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D174A31B73755C00B6AB7A /* ALAsset+AGIPC.m */; };
 		F5F760C51B73825600428CF2 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F760C41B73825600428CF2 /* BBBadgeBarButtonItem.m */; };
+		F5F760C91B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F760C81B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		F5D174A31B73755C00B6AB7A /* ALAsset+AGIPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+AGIPC.m"; sourceTree = "<group>"; };
 		F5F760C41B73825600428CF2 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 		F5F760C61B73878E00428CF2 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		F5F760C71B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXReorderableCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		F5F760C81B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXReorderableCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 		F5D1748F1B73755C00B6AB7A /* TBGImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				F5F760C71B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.h */,
+				F5F760C81B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.m */,
 				F5D174901B73755C00B6AB7A /* AGImagePickerController+Helper.h */,
 				F5D174911B73755C00B6AB7A /* AGImagePickerController+Helper.m */,
 				F5D174921B73755C00B6AB7A /* AGImagePickerController.bundle */,
@@ -279,6 +284,7 @@
 				F5D174721B73754600B6AB7A /* ViewController.m in Sources */,
 				F5D174AA1B73755C00B6AB7A /* AGIPCAssetsController.m in Sources */,
 				F5F760C51B73825600428CF2 /* BBBadgeBarButtonItem.m in Sources */,
+				F5F760C91B74A22A00428CF2 /* LXReorderableCollectionViewFlowLayout.m in Sources */,
 				F5D1746F1B73754600B6AB7A /* AppDelegate.m in Sources */,
 				F5D174AB1B73755C00B6AB7A /* AGIPCGridCell.m in Sources */,
 				F5D174AC1B73755C00B6AB7A /* AGIPCGridCollectionCell.m in Sources */,

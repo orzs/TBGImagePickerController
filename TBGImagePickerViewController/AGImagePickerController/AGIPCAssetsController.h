@@ -15,15 +15,12 @@
 
 #import "AGImagePickerController.h"
 #import "AGIPCGridItem.h"
+#import "LXReorderableCollectionViewFlowLayout.h"
 
-@interface AGIPCAssetsController : UIViewController<UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,AGIPCGridItemDelegate>
+@interface AGIPCAssetsController : UIViewController<UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,AGIPCGridItemDelegate,LXReorderableCollectionViewDataSource, LXReorderableCollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong) UITableView *mytableView;
-@property (nonatomic,strong) UICollectionView *mycollectionView;
-@property (nonatomic,strong) UILabel *selectionInfoLabel;
-@property (nonatomic,strong) ALAssetsGroup *assetsGroup;
-@property (ag_weak, readonly) NSMutableArray *selectedAssets;
-@property (nonatomic,strong) AGImagePickerController *imagePickerController;
+
+@property (nonatomic,strong)  AGImagePickerController *imagePickerController;
 
 - (id)initWithImagePickerController:(AGImagePickerController *)imagePickerController andAssetsGroup:(ALAssetsGroup *)assetsGroup;
 
